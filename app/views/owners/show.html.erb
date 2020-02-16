@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @owner.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @owner.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @owner.email %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @owner.phone_number %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @owner.password %>
+</p>
+
+<p>
+  <strong>Contact method:</strong>
+  <%= @owner.contact_method %>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <%= @owner.admin %>
+</p>
+
+<%= link_to 'Edit', edit_owner_path(@owner) %> |
+<%= link_to 'Back', owners_path %>
