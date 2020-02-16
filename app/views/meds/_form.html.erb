@@ -1,0 +1,37 @@
+<%= form_with(model: med, local: true) do |form| %>
+  <% if med.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(med.errors.count, "error") %> prohibited this med from being saved:</h2>
+
+      <ul>
+        <% med.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dose %>
+    <%= form.text_field :dose %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instructions %>
+    <%= form.text_area :instructions %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pet_id %>
+    <%= form.number_field :pet_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

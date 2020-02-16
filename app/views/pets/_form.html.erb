@@ -19,10 +19,10 @@
   <div class="field">
     <p>type:</p>
     <p>
-      <%= form.radio_button :type, "dog" %>
-      <%= form.label :contact_method, 'dog' %>
-      <%= form.radio_button :contact_method, "cat" %>
-      <%= form.label :contact_method, 'cat' %>
+      <%= form.radio_button :dog_cat, "dog" %>
+      <%= form.label :dog_cat, 'dog' %>
+      <%= form.radio_button :dog_cat, "cat" %>
+      <%= form.label :dog_cat, 'cat' %>
     </p><br>
   </div>
 
@@ -42,7 +42,7 @@
 
   <div class="field">
     <%= form.label :owner_id %>
-    <%= form.number_field :owner_id %>
+    <%= form.text_field :owner_id, value: @current_user %>
   </div>
 
   <div class="actions">

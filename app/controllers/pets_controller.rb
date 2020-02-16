@@ -10,11 +10,13 @@ class PetsController < ApplicationController
   def show
     @veterinarian = Veterinarian.find_by(params[:veterinarian_id])
     @owner = Owner.find_by(params[:owner_id])
+    @meds = Med.find_by(params[:pet_id])
   end
 
   # GET /pets/new
   def new
     @pet = Pet.new
+    @owner = Owner.find_by(params[:id])
   end
 
   # GET /pets/1/edit
@@ -55,6 +57,6 @@ class PetsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def pet_params
-      params.require(:pet).permit(:name, :type, :breed, :veterinarian_id, :owner_id)
+      params.require(:pet).permit(:name, :dog_cat, :breed, :veterinarian_id, :owner_id)
     end
 end

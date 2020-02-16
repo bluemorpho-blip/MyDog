@@ -7,7 +7,7 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @pet.type %>
+  <%= @pet.dog_cat %>
 </p>
 
 <p>
@@ -25,5 +25,17 @@
   <%= owner_name(@owner) %>
 </p>
 
+<p>
+  <strong>Medications:</strong>
+  <ul>
+    <% @pet.meds.each do |med| %>
+      <li><%= med.name %></li>
+      <li><%= med.dose %></li>
+      <li><%= med.instructions %></li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Add Medication', new_med_path(@pet) %> |
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>
