@@ -16,7 +16,7 @@ class PetsController < ApplicationController
   # GET /pets/new
   def new
     @pet = Pet.new
-    @owner = Owner.find_by(params[:id])
+    @owner = current_owner
   end
 
   # GET /pets/1/edit
@@ -25,7 +25,7 @@ class PetsController < ApplicationController
 
   # POST /pets
   def create
-    @pet = Pet.new(pet_params)
+    @pet = current_owner.pets.new(pet_params)
 
     if @pet.save
       redirect_to @pet, notice: 'Pet was successfully created.'

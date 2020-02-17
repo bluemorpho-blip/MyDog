@@ -21,12 +21,17 @@ class OwnersController < ApplicationController
 
   # POST /owners
   def create
-    @owner = Owner.new(owner_params)
-
+    if (@owner = Owner.new(owner_params))
     if @owner.save
-      redirect_to @owner, notice: 'Owner was successfully created.'
+      session[:owner_id] = @owner.id
+      # flash[:message] = ' Welcome, #{@owner.name}'
+      redirect_to owner_path(@owner)
     else
       render :new
+    end
+    else
+      flash[:message] = "There was an error creating the owner."
+      redirect_to signup_path
     end
   end
 
@@ -53,6 +58,6 @@ class OwnersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def owner_params
-      params.require(:owner).permit(:first_name, :last_name, :email, :phone_number, :contact_method, :password_digest, :admin)
+      params.require(:owner).permit(:name, :email, :phone_number, :contact_method, :password_digest, :admin)
     end
 end

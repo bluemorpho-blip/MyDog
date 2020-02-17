@@ -1,0 +1,8 @@
+<h1>Welcome</h1>
+
+<% if logged_in? %>
+  <h2>You are logged in, <%= link_to current_owner.name, owner_path(current_owner.id) %></h2>
+<% end %>
+
+<%= link_to 'log in', signin_path %> |
+<%= link_to 'Sing up', signup_path %>

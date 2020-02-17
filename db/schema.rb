@@ -22,8 +22,7 @@ ActiveRecord::Schema.define(version: 2020_02_16_224102) do
   end
 
   create_table "owners", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "name"
     t.string "email"
     t.integer "phone_number"
     t.string "contact_method"

@@ -5,8 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>First name </th>
-      <th>Last name</th>
+      <th>Name</th>
       <th>Email</th>
       <th>Phone number</th>
       <th> Contact method</th>
@@ -19,8 +18,7 @@
   <tbody>
     <% @owners.each do |owner| %>
       <tr>
-        <td><%= owner.first_name %></td>
-        <td><%= owner.last_name %></td>
+        <td><%= owner.name %></td>
         <td><%= owner.email %></td>
         <td><%= owner.phone_number %></td>
         <td><%= owner.contact_method %></td>
