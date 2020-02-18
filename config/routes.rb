@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   root 'sessions#welcome'
 
-  get 'signin' => "sessions#login"
-  post 'signin' => 'sessions#create'
+  get 'login' => "sessions#new"
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
   get 'signup' => 'owners#new'
   post 'signup' => 'owners#create'
 

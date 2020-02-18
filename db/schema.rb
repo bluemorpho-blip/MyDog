@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_02_16_224102) do
     t.integer "phone_number"
     t.string "contact_method"
     t.string "password_digest"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_02_16_224102) do
 
   create_table "veterinarians", force: :cascade do |t|
     t.string "name"
-    t.boolean "admin"
+    t.boolean "admin", default: true
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

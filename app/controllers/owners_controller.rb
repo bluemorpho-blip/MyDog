@@ -6,18 +6,18 @@ class OwnersController < ApplicationController
     @owners = Owner.all
   end
 
-  # GET /owners/1
-  def show
-
-  end
-
   # GET /owners/new
   def new
     @owner = Owner.new
   end
 
-  # GET /owners/1/edit
-  def edit
+  # GET /owners/1
+  def show
+    if (@owner = Owner.find_by(id: params[:id]))
+      authorize(@user)
+    else
+      not_authorized
+    end
   end
 
   # POST /owners
@@ -36,6 +36,10 @@ class OwnersController < ApplicationController
     end
   end
 
+  # GET /owners/1/edit
+  def edit
+  end
+
   # PATCH/PUT /owners/1
   def update
     if @owner.update(owner_params)
@@ -52,6 +56,7 @@ class OwnersController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_owner
       @owner = Owner.find(params[:id])
@@ -59,6 +64,6 @@ class OwnersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def owner_params
-      params.require(:owner).permit(:name, :email, :phone_number, :contact_method, :password_digest, :admin)
+      params.require(:owner).permit([:name, :email, :phone_number, :contact_method, :password, :admin])
     end
 end
