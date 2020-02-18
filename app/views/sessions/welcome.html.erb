@@ -5,4 +5,5 @@
 <% end %>
 
 <%= link_to 'log in', login_path %> |
+<%= link_to 'log out', {:controller => 'sessions', :action => 'destroy'}, :method => :delete %> |
 <%= link_to 'Sign up', signup_path %>
