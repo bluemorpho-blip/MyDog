@@ -6,7 +6,7 @@ class CreateOwners < ActiveRecord::Migration[6.0]
       t.integer :phone_number
       t.string :contact_method
       t.string :password_digest
-      t.boolean :admin
+      t.boolean :admin, default: false
 
       t.timestamps
     end

@@ -30,6 +30,30 @@
   <%= @owner.admin %>
 </p>
 
+<table>
+  <thead>
+  <tr>
+    <th>Pet Name</th>
+    <th>Veterinarian</th>
+    <th>Type</th>
+    <th> Breed</th>
+    <th colspan="3"></th>
+  </tr>
+  <tbody>
+    <tr>
+      <% @owner.pets.each do |pet| %>
+      <td><%= pet.name %></td>
+      <td><%= pet.name %></td>
+      <td><%= pet.dog_cat %></td>
+      <td><%= pet.breed %></td>
+      <td><%= link_to 'Show', pet %></td>
+      <td><%= link_to 'Edit', edit_owner_path(pet) %></td>
+      <td><%= link_to 'Destroy',pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+        <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Add a pet', new_pet_path(@owner.id) %> |
 <%= link_to 'Edit', edit_owner_path(@owner) %> |
 <%= link_to 'Back', owners_path %>

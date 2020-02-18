@@ -8,6 +8,7 @@ class OwnersController < ApplicationController
 
   # GET /owners/1
   def show
+
   end
 
   # GET /owners/new
