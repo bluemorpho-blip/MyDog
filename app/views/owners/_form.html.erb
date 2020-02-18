@@ -40,17 +40,16 @@
       <%= form.label :contact_method, 'email' %>
    </p>
   </div>
-  <br>
 
   <div class="field">
-    <br>
-    <p>
-      <%= form.label :admin %>
-      <%= form.check_box :admin %>
-    </p>
+    <%= form.hidden_field(:admin, :value => "false") %>
   </div>
+  <br>
 
   <div class="actions">
+    <p>
+      <br>
     <%= form.submit %>
+    </p>
   </div>
 <% end %>

@@ -17,8 +17,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :admin %>
-    <%= form.check_box :admin, checked: true %>
+    <%= form.hidden_field(:admin, :value => "true") %>
   </div>
 
   <div class="field">
