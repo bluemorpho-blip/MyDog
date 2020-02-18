@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Owners</h1>
+<h1>users</h1>
 
 <table>
   <thead>
@@ -16,17 +16,17 @@
   </thead>
 
   <tbody>
-    <% @owners.each do |owner| %>
+    <% @users.each do |user| %>
       <tr>
-        <td><%= owner.name %></td>
-        <td><%= owner.email %></td>
-        <td><%= owner.phone_number %></td>
-        <td><%= owner.contact_method %></td>
-        <td><%= owner.password %></td>
-        <td><%= owner.admin %></td>
-        <td><%= link_to 'Show', owner %></td>
-        <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
-        <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.phone_number %></td>
+        <td><%= user.contact_method %></td>
+        <td><%= user.password %></td>
+        <td><%= user.admin %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Owner', new_owner_path %>
+<%= link_to 'New user', new_user_path %>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :meds
   resources :pets
-  resources :owners
+  resources :users
   resources :veterinarians
   resources :sessions
 
@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get 'login' => "sessions#new"
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  get 'signup' => 'owners#new'
-  post 'signup' => 'owners#create'
+  get 'signup' => 'users#new'
+  post 'signup' => 'users#create'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -9,7 +9,7 @@ class PetsController < ApplicationController
   # GET /pets/1
   def show
     @veterinarian = Veterinarian.find_by(params[:veterinarian_id])
-    @owner = Owner.find_by(params[:owner_id])
+    @owner = User.find_by(params[:owner_id])
     @meds = Med.find_by(params[:pet_id])
   end
 

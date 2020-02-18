@@ -1,23 +1,23 @@
 class SessionsController < ApplicationController
 
   def login
-    @owners = Owner.all
+    @owners = User.all
   end
 
   def create
-    if (owner = Owner.find_by(owner_params(:id)))
+    if (owner = User.find_by(owner_params(:id)))
       if owner.authenticate(params[:owner][:password])
         session[:owner_id] = owner_id
         flash[:message] = "Welcome, #{owner.name}"
         redirect_to owner_path(owner)
       else
         flash[:message] = "Improper Credentials Entered."
-        @owners = Owner.all
+        @owners = User.all
         render 'login'
       end
     else
       flash[:message] = "User not found."
-      @owners = Owner.all
+      @owners = User.all
       render 'login'
     end
   end

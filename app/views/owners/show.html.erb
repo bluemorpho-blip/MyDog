@@ -2,27 +2,27 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @owner.name %>
+  <%= @user.name %>
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= @owner.email %>
+  <%= @user.email %>
 </p>
 
 <p>
   <strong>Phone number:</strong>
-  <%= @owner.phone_number %>
+  <%= @user.phone_number %>
 </p>
 
 <p>
   <strong>Password:</strong>
-  <%= @owner.password %>
+  <%= @user.password %>
 </p>
 
 <p>
   <strong>Contact method:</strong>
-  <%= @owner.contact_method %>
+  <%= @user.contact_method %>
 </p>
 
 <table>
@@ -36,19 +36,19 @@
   </tr>
   <tbody>
     <tr>
-      <% @owner.pets.each do |pet| %>
+      <% @user.pets.each do |pet| %>
       <td><%= pet.name %></td>
       <td><%= pet.name %></td>
       <td><%= pet.dog_cat %></td>
       <td><%= pet.breed %></td>
       <td><%= link_to 'Show', pet %></td>
-      <td><%= link_to 'Edit', edit_owner_path(pet) %></td>
+      <td><%= link_to 'Edit', edit_user_path(pet) %></td>
       <td><%= link_to 'Destroy',pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
         <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Add a pet', new_pet_path(@owner.id) %> |
-<%= link_to 'Edit', edit_owner_path(@owner) %> |
-<%= link_to 'Back', owners_path %>
+<%= link_to 'Add a pet', new_pet_path(@user.id) %> |
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

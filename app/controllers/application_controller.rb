@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_owner
-    Owner.find_by(id: session[:owner_id])
+    User.find_by(id: session[:owner_id])
   end
 
   def logged_in?

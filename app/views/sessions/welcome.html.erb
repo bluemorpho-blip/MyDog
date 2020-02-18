@@ -1,7 +1,7 @@
 <h1>Welcome</h1>
 
 <% if logged_in? %>
-  <h2>You are logged in, <%= link_to current_owner.name, owner_path(current_owner.id) %></h2>
+  <h2>You are logged in, <%= link_to current_user.name, user_path(current_user.id) %></h2>
 <% end %>
 
 <%= link_to 'log in', login_path %> |

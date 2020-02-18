@@ -2,8 +2,8 @@
 
 <%= form_tag(signin_path) do %>
   <%= label_tag :'Your email address' %>
-  <%= text_field :owner, :email, id: "email" %><br>
+  <%= text_field :user, :email, id: "email" %><br>
   <%= label_tag :"Password" %>
-  <%= password_field :owner, :password, id: "password" %>
+  <%= password_field :user, :password, id: "password" %>
   <%= submit_tag "Sign In" %>
 <% end %>
