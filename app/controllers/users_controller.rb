@@ -3,17 +3,17 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = user.all
+    @users = User.all
   end
 
   # GET /users/new
   def new
-    @user = user.new
+    @user = User.new
   end
 
   # GET /users/1
   def show
-    if (@user = user.find_by(id: params[:id]))
+    if (@user = User.find_by(id: params[:id]))
       authorize(@user)
     else
       not_authorized
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    if (@user = user.new(user_params))
+    if (@user = User.new(user_params))
     if @user.save
       session[:user_id] = @user.id
       # flash[:message] = ' Welcome, #{@user.name}'
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = user.find(params[:id])
+      @user = User.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

@@ -1,33 +1,33 @@
 class ApplicationController < ActionController::Base
 
-  helper_method :current_owner
+  helper_method :current_user
   helper_method :logged_in?
 
   private
 
-  def authorize(owner = nil)
-    if owner.nil?
+  def authorize(user = nil)
+    if user.nil?
       not_authorized("Login to view this page!") unless logged_in?
     else
-      not_authorized unless owner == current_owner
+      not_authorized unless owner == current_user
     end
   end
 
   def authorize_admin
     authorize
-    not_authorized("You must be an admin to view this page.") unless current_owner.admin
+    not_authorized("You must be an admin to view this page.") unless current_user.admin
   end
 
-  def current_owner_is?(user)
-    owner == current_owner
+  def current_user_is?(user)
+    user == current_user
   end
 
-  def current_owner
-    User.find_by(id: session[:owner_id])
+  def current_user
+    User.find_by(id: session[:user_id])
   end
 
   def logged_in?
-    !!current_owner
+    !!current_user
   end
 
   def not_authorized(msg = "You are not authorized to view this page.")

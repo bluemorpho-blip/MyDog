@@ -21,23 +21,23 @@ ActiveRecord::Schema.define(version: 2020_02_16_224102) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "owners", force: :cascade do |t|
+  create_table "pets", force: :cascade do |t|
+    t.string "name"
+    t.string "dog_cat"
+    t.string "breed"
+    t.integer "veterinarian_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.integer "phone_number"
     t.string "contact_method"
     t.string "password_digest"
     t.boolean "admin", default: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "pets", force: :cascade do |t|
-    t.string "name"
-    t.string "dog_cat"
-    t.string "breed"
-    t.integer "veterinarian_id"
-    t.integer "owner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
