@@ -13,6 +13,7 @@ class MedsController < ApplicationController
   # GET /meds/new
   def new
     @med = Med.new
+    @user = current_user
   end
 
   # GET /meds/1/edit
@@ -21,7 +22,8 @@ class MedsController < ApplicationController
 
   # POST /meds
   def create
-    @med = Med.new(med_params)
+    @pet = Pet.find(params[:pet_id])
+    @med = pet.meds.new(med_params)
 
     if @med.save
       redirect_to @med, notice: 'Med was successfully created.'
@@ -53,6 +55,6 @@ class MedsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def med_params
-      params.require(:med).permit(:name, :dose, :instructions, :pet_id)
+      params.require(:med).permit(:name, :dose, :user_id, :pet_id)
     end
 end

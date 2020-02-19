@@ -36,8 +36,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :veterinarian_id %>
-    <%= collection_select(:veterinarian, :veterinarian_id, Veterinarian.all, :id, :name, { prompt: 'Please select you veterinarian from this dropdown' } ) %>
+    <%= collection_select :pet, :veterinarian_id, Veterinarian.all, :id, :name, { prompt: 'Please select you veterinarian from this dropdown' } %>
   </div>
 
   <div class="field">

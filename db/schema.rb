@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_02_16_224102) do
     t.string "dose"
     t.text "instructions"
     t.integer "pet_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

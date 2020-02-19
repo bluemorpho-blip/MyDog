@@ -5,6 +5,7 @@ class CreateMeds < ActiveRecord::Migration[6.0]
       t.string :dose
       t.text :instructions
       t.integer :pet_id
+      t.integer :user_id
 
       t.timestamps
     end

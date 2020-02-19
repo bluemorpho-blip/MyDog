@@ -9,12 +9,14 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @veterinarian = Veterinarian.new
   end
 
   # GET /users/1
   def show
     if (@user = User.find_by(id: params[:id]))
       authorize(@user)
+      @veterinarian = Veterinarian.find_by(params[:veterinarian_id])
     else
       not_authorized
     end
