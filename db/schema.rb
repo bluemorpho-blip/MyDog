@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_02_16_224102) do
     t.string "breed"
     t.integer "veterinarian_id"
     t.integer "user_id"
+    t.integer "med_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_02_16_224102) do
     t.string "contact_method"
     t.string "password_digest"
     t.boolean "admin", default: false
+    t.integer "med_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

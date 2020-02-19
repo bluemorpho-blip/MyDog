@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :contact_method
       t.string :password_digest
       t.boolean :admin, default: false
+      t.integer :med_id
 
       t.timestamps
     end

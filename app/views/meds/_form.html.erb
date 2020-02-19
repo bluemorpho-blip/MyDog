@@ -17,6 +17,10 @@
   </div>
 
   <div class="field">
+    <%= collection_select :med, :pet_id, Pet.all, :id, :name, { prompt: 'Please select your pet from this dropdown' } %>
+  </div>
+
+  <div class="field">
     <%= form.label :dose %>
     <%= form.text_field :dose %>
   </div>

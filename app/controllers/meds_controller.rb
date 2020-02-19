@@ -12,6 +12,7 @@ class MedsController < ApplicationController
 
   # GET /meds/new
   def new
+    @pet = Pet.find_by(params[:id])
     @med = Med.new
     @user = current_user
   end
@@ -22,9 +23,7 @@ class MedsController < ApplicationController
 
   # POST /meds
   def create
-    @pet = Pet.find(params[:pet_id])
-    @med = pet.meds.new(med_params)
-
+    @med = current_user.meds.new(med_params)
     if @med.save
       redirect_to @med, notice: 'Med was successfully created.'
     else
