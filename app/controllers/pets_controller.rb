@@ -9,14 +9,15 @@ class PetsController < ApplicationController
   # GET /pets/1
   def show
     @veterinarian = Veterinarian.find_by(params[:veterinarian_id])
-    @owner = User.find_by(params[:owner_id])
+    @user = User.find_by(params[:user_id])
     @meds = Med.find_by(params[:pet_id])
   end
 
   # GET /pets/new
   def new
     @pet = Pet.new
-    @owner = current_owner
+    @user = current_user
+    @veterinarians = Veterinarian.all
   end
 
   # GET /pets/1/edit
@@ -25,7 +26,7 @@ class PetsController < ApplicationController
 
   # POST /pets
   def create
-    @pet = current_owner.pets.new(pet_params)
+    @pet = current_user.pets.new(pet_params)
 
     if @pet.save
       redirect_to @pet, notice: 'Pet was successfully created.'
@@ -57,6 +58,6 @@ class PetsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def pet_params
-      params.require(:pet).permit(:name, :dog_cat, :breed, :veterinarian_id, :owner_id)
+      params.require(:pet).permit(:name, :dog_cat, :breed, :veterinarian_id, :user_id)
     end
 end
