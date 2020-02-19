@@ -22,18 +22,10 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    if (@user = User.new(user_params))
-    if @user.save
-      session[:user_id] = @user.id
-      # flash[:message] = ' Welcome, #{@user.name}'
-      redirect_to user_path(@user)
-    else
-      render :new
-    end
-    else
-      flash[:message] = "There was an error creating the user."
-      redirect_to signup_path
-    end
+    @user = User.create(user_params)
+    return redirect_to controller: 'users', action: 'new' unless @user.save
+    session[:user_id] = @user.id
+    redirect_to root_path
   end
 
   # GET /users/1/edit
