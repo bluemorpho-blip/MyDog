@@ -17,7 +17,7 @@
   </div>
 
   <div class="field">
-    <%= collection_select :med, :pet_id, Pet.all, :id, :name, { prompt: 'Please select your pet from this dropdown' } %>
+    <%= collection_select :med, :pet_id, current_user.pets, :id, :name, { prompt: 'Please select your pet from this dropdown' } %>
   </div>
 
   <div class="field">
@@ -27,7 +27,7 @@
 
   <div class="field">
     <%= form.label :instructions %>
-    <%= form.text_area :instructions %>
+    <%= form.text_field :instructions %>
   </div>
 
 

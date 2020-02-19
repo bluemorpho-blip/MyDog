@@ -54,6 +54,6 @@ class MedsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def med_params
-      params.require(:med).permit(:name, :dose, :user_id, :pet_id)
+      params.require(:med).permit(:name, :dose, :instructions, :user_id, :pet_id)
     end
 end
