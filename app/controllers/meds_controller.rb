@@ -8,7 +8,7 @@ class MedsController < ApplicationController
 
   # GET /meds/1
   def show
-
+    @pet = @med.pet
   end
 
   # GET /meds/new

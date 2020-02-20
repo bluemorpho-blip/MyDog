@@ -19,7 +19,7 @@
         <td><%= med.name %></td>
         <td><%= med.dose %></td>
         <td><%= med.instructions %></td>
-        <td><%= med.pet_id %></td>
+        <td><%= med.pet.name %></td>
         <td><%= link_to 'Show', med %></td>
         <td><%= link_to 'Edit', edit_med_path(med) %></td>
         <td><%= link_to 'Destroy', med, method: :delete, data: { confirm: 'Are you sure?' } %></td>
