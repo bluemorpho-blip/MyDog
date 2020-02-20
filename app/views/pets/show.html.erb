@@ -29,9 +29,10 @@
   <strong>Medications:</strong>
   <ul>
     <% @pet.meds.each do |med| %>
-      <li><%= med.name %></li>
+      <li><strong><%= med.name %></strong></li>
       <li><%= med.dose %></li>
       <li><%= med.instructions %></li>
+      <br>
     <% end %>
   </ul>
 </p>

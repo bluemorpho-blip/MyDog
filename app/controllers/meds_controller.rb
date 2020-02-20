@@ -8,11 +8,11 @@ class MedsController < ApplicationController
 
   # GET /meds/1
   def show
+
   end
 
   # GET /meds/new
   def new
-    @pet = Pet.find_by(params[:id])
     @med = Med.new
     @user = current_user
   end

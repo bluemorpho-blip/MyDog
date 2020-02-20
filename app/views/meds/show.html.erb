@@ -17,8 +17,8 @@
 
 <p>
   <strong>Pet:</strong>
-  <%= pet_name %>
+  <%= @med.pet.name %>
 </p>
 
 <%= link_to 'Edit', edit_med_path(@med) %> |
-<%= link_to 'Back', meds_path %>
+<%= link_to 'Back', meds_path %> |
