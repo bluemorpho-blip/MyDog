@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
@@ -26,7 +30,6 @@
     </p><br>
   </div>
 
-
   <div class="field">
     <br>
     <p>
@@ -37,11 +40,6 @@
 
   <div class="field">
     <%= collection_select :pet, :veterinarian_id, Veterinarian.all, :id, :name, { prompt: 'Please select you veterinarian from this dropdown' } %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user, "Owner" %>
-    <%= form.text_field :user_id, id: :user_id, value: current_user.name %>
   </div>
 
   <div class="actions">

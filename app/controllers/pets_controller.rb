@@ -22,8 +22,7 @@ class PetsController < ApplicationController
 
   # GET /pets/1/edit
   def edit
-    @pet = Pet.find_by(params[:id])
-    @user = @pet.user
+    @pet = Pet.find(params[:id])
   end
 
   # POST /pets
@@ -39,6 +38,7 @@ class PetsController < ApplicationController
 
   # PATCH/PUT /pets/1
   def update
+    @pet = Pet.find(params[:id])
     if @pet.update(pet_params)
       redirect_to @pet, notice: 'Pet was successfully updated.'
     else
@@ -62,4 +62,5 @@ class PetsController < ApplicationController
     def pet_params
       params.require(:pet).permit(:name, :dog_cat, :breed, :veterinarian_id, :user_id)
     end
+
 end
