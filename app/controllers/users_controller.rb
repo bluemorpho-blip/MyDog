@@ -24,10 +24,13 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.create(user_params)
-    return redirect_to new_user_path, notice: 'Name already in use' unless @user.save
-    session[:user_id] = @user.id
-    redirect_to @user, notice: 'new user was successfully created.'
+    @user = User.new(user_params)
+
+    if @user.save
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
 
   # GET /users/1/edit
