@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
-  before_action :authorize, only: [:index, :edit]
-  before_action :require_login, only: [:index, :edit, :update, :destroy]
+  before_action :authorize, only: [:edit]
+  before_action :require_login, only: [:edit, :update, :destroy]
+  before_action :authorize_admin, only: [:index]
 
   helper_method :current_user
   helper_method :logged_in?
@@ -17,8 +18,8 @@ class ApplicationController < ActionController::Base
 
   def authorize_admin
     authorize
-    not_authorized("You must be an admin to view this page.") unless current_user.admin
-    redirect_to root_path
+    not_authorized("You must be an admin to view that page.") unless current_user.admin
+      # redirect_to root_path
   end
 
   def current_user_is?(user)
@@ -40,7 +41,7 @@ class ApplicationController < ActionController::Base
   end
 
   def not_authorized(msg)
-    redirect_to root_path, notice: msg
+    redirect_to root_path, notice: msg and return
   end
 
 end

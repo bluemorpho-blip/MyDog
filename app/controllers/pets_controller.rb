@@ -1,6 +1,5 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
-  before_action :authorize, only: [:edit]
 
   # GET /pets
   def index
