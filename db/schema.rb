@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_02_16_224102) do
 
   create_table "veterinarians", force: :cascade do |t|
     t.string "name"
+    t.string "email"
     t.boolean "admin", default: true
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false

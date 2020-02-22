@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
     <%= form.hidden_field(:admin, :value => "true") %>
   </div>
 
