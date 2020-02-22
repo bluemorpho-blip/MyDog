@@ -10,10 +10,10 @@
 
     <% if !logged_in? %>
       <%= link_to 'log in', login_path %> |
+      <%= link_to 'sign up', signup_path %> |
     <% else %>
       <%= link_to  'log out', {:controller => 'sessions', :action => 'destroy'}, :method => :delete %> |
     <% end %>
-    <%= link_to 'sign up', signup_path %> |
     <%= link_to 'home', root_path %>
 
   </head>

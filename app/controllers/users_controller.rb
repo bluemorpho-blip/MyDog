@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+
   # GET /users
   def index
     @users = User.all
@@ -24,12 +25,17 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(user_params)
-
-    if @user.save
-      redirect_to user_path(@user)
-    else
+    if (@user = User.new(user_params))
+      if @user.save
+        session[:user_id] = @user.id
+        # flash[:message] = "Welcome, #{@user.name}"
+        redirect_to user_path(@user)
+      else
       render :new
+      end
+    else
+      flash[:message] = "The was an error creating the user"
+      redirect_to signup_path
     end
   end
 
