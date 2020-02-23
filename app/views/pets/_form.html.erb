@@ -12,11 +12,18 @@
   <% end %>
 
   <div class="field">
+    <% if current_user.admin %>
+      <%= hidden_field_tag 'pet.name' %>
+      <%= form.collection_select(:pet_id, User.all, :id, :name, { prompt: 'Please select owner name from list' } ) %>
+      <% end %>
+  </div>
+
+  <div class="field">
     <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :pet_name %>
     <%= form.text_field :name %>
   </div>
 
@@ -39,7 +46,7 @@
   </div>
 
   <div class="field">
-    <%= collection_select :pet, :veterinarian_id, Veterinarian.all, :id, :name, { prompt: 'Please select you veterinarian from this dropdown' } %>
+    <%= form.collection_select :pet_id, @veterinarian, :id, :name, { prompt: 'Please select you veterinarian from this dropdown' } %>
   </div>
 
   <div class="actions">

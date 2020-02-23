@@ -44,13 +44,22 @@
       <%= form.label :contact_method, 'text' %>
       <%= form.radio_button :contact_method, "email" %>
       <%= form.label :contact_method, 'email' %>
+      <br>
    </p>
   </div>
 
+
   <div class="field">
-    <%= form.hidden_field(:admin, :value => "false") %>
+    <p>
+      <br>
+    <% if current_user.admin %>
+      <%= form.label :admin %>
+      <%= form.check_box :admin, checked: true%>
+  <% else %>
+      <%= form.hidden_field(:admin, :value => "false") %>
+  <% end %>
+    </p>
   </div>
-  <br>
 
   <div class="actions">
     <p>

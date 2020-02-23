@@ -52,3 +52,6 @@
 <%= link_to 'Add a pet', new_pet_path(@user.id) %> |
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %> |
+<% if current_user.admin %>
+  <%= link_to "all users", users_path %>
+<% end %>
