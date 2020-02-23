@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
   end
 
   def not_authorized(msg)
-    redirect_to root_path, notice: msg and return
+    redirect_to root_path, notice: msg
   end
 
 end

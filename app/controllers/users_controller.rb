@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       authorize(@user)
       @veterinarian = Veterinarian.find_by(params[:veterinarian_id])
     else
-      not_authorized
+      not_authorized("only accessible to registered user")
     end
   end
 
