@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    @veterinarian = User.admin
   end
 
   # GET /users/1
