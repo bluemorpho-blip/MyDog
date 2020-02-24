@@ -57,16 +57,6 @@ class UsersController < ApplicationController
   end
 
 
-  # SEND /pets/mail
-  def send_mail
-
-    @user = current_user.id
-    UserMailer.send_mail(@user).deliver_now
-    flash[:notice] = "Email has been sent."
-    redirect_to user_path(@user.id)
-  end
-
-
   private
 
 
