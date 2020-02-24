@@ -56,7 +56,19 @@ class UsersController < ApplicationController
     redirect_to users_url, notice: 'user was successfully destroyed.'
   end
 
+
+  # SEND /pets/mail
+  def send_mail
+
+    @user = current_user.id
+    UserMailer.send_mail(@user).deliver_now
+    flash[:notice] = "Email has been sent."
+    redirect_to user_path(@user.id)
+  end
+
+
   private
+
 
     # Use callbacks to share common setup or constraints between actions.
     def set_user

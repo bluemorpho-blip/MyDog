@@ -27,14 +27,28 @@
 
 <p>
   <strong>Medications:</strong>
-  <ul>
-    <% @pet.meds.each do |med| %>
-      <li><strong><%= med.name %></strong></li>
-      <li><%= med.dose %></li>
-      <li><%= med.instructions %></li>
-      <br>
+  <table>
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>dose</th>
+        <th>instructions</th>
+        <th>contact</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <% @pet.meds.each do |med| %>
+          <td><%= med.name %></td>
+          <td><%= med.dose %></td>
+          <td><%= med.instructions %></td>
+          <td><%= current_user.contact_method %></td>
+          <td><%= mail_to "#{current_user.email}", current_user.email, subject: "#{@pet.name}'s Rx is ready", body: "come pick up your Rx"  %></td>
+      </tr>
     <% end %>
-  </ul>
+   </tbody>
+  </table>
 </p>
 
 <%= link_to 'Add Medication', new_med_path %> |
