@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-   protect_from_forgery with: :exception
+  protect_from_forgery with: :exception
 
   before_action :authorize, only: [:edit]
   before_action :require_login, only: [:index, :edit, :update, :destroy]
@@ -12,9 +12,9 @@ class ApplicationController < ActionController::Base
 
   def authorize(user = nil)
     if user.nil?
-      not_authorized("Login to view this page!") unless logged_in?
+      not_authorized("Login to view this page!") unless logged_in? || current_user.admin
     else
-      not_authorized("Login to view this page!") unless user == current_user
+      not_authorized("Login to view this page!") unless user == current_user || current_user.admin
     end
   end
 
