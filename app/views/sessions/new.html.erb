@@ -2,12 +2,13 @@
 
     <%= form_for @user, url: login_path, method: :post do |f| %>
 
-      <%= f.label :email %>
+      <%= f.label :email %><br>
       <%= f.email_field :email %><br>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %><br>
 
+      <br>
       <%= f.submit "log in" %>
     <% end %>
 

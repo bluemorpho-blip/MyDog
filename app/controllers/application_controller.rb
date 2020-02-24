@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     if user.nil?
       not_authorized("Login to view this page!") unless logged_in?
     else
-      not_authorized("Login to view this page!") # unless user == current_user
+      not_authorized("Login to view this page!") unless user == current_user
     end
   end
 

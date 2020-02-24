@@ -18,23 +18,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %><br>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %><br>
   </div>
 
   <div class="field">
-    <%= form.label :phone_number %>
-    <%= form.number_field :phone_number %>
+    <%= form.label :phone_number %><br>
+    <%= form.number_field :phone_number %><br?
   </div>
 
   <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.label :password %><br>
+    <%= form.password_field :password %><br>
   </div>
 
   <div class="field">
@@ -47,13 +47,18 @@
       <br>
    </p>
   </div>
-
+  <br>
 
   <div class="field">
     <p>
+    <% if current_user.try(:admin) %>
+      <%= form.label :admin %>
+      <%= form.check_box :admin, :value => "true" %>
+    <% else %>
       <%= form.hidden_field(:admin, :value => "false") %>
     </p>
-  </div>
+    </div>
+  <% end %>
 
   <div class="actions">
     <p>
