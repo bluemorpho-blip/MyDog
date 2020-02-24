@@ -51,7 +51,11 @@
           <td><%= mail_to "admin@mydog.com", "admin@mydog.com", subject: "#{@pet.user.name} refill request", body: "Refill request for: #{@pet.user.name}, pet #{@pet.name}  #{med.name}  #{med.dose} #{med.instructions} " %></td>
           <td align="center"><%= @pet.user.contact_method %></td>
           <% if current_user.admin %>
-            <td><%= mail_to "#{@pet.user.email}", current_user.email, subject: "#{@pet.name}'s Rx is ready", body: "come pick up your Rx"  %></td>
+            <% if @pet.user.contact_method == "email" %>
+              <td><%= mail_to "#{@pet.user.email}", current_user.email, subject: "#{@pet.name}'s Rx is ready", body: "come pick up your Rx"  %></td>
+            <% else %>
+              <td><%= @pet.user.phone_number %></td>
+            <% end %>
           <% end %>
       </tr>
     <% end %>
