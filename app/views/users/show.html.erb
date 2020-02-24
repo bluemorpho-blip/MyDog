@@ -53,5 +53,6 @@
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %> |
 <% if current_user.admin %>
-  <%= link_to "all users", users_path %>
+  <%= link_to "all users", users_path %> |
+  <%= link_to "veterinarians", veterinarians_path %>
 <% end %>

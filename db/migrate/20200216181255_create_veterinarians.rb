@@ -3,7 +3,7 @@ class CreateVeterinarians < ActiveRecord::Migration[6.0]
     create_table :veterinarians do |t|
       t.string :name
       t.string :email
-      t.boolean :admin, default: true
+      t.boolean :admin, default: false
       t.string :password_digest
 
       t.timestamps

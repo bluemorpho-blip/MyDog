@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.hidden_field :user_id, value: @user.id %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="field">
@@ -39,7 +39,7 @@
   </div>
 
   <div class="field">
-    <%= form.collection_select :pet_id, Veterinarian.all, :id, :name, { prompt: 'Please select you veterinarian from this dropdown' } %>
+    <%= form.collection_select :veterinarian_id, Veterinarian.all, :id, :name, { prompt: 'Please select you veterinarian from this dropdown' } %>
   </div>
 
   <div class="actions">
