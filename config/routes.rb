@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post 'twilio/sms'
   resources :meds
   resources :pets
   resources :users
