@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  post 'twilio/sms'
   resources :meds
   resources :pets
   resources :users
   resources :veterinarians
   resources :sessions
+
+  get '/twilio/sms'
 
   root 'sessions#welcome'
 

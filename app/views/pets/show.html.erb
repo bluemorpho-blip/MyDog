@@ -54,7 +54,7 @@
             <% if @pet.user.contact_method == "email" %>
               <td><%= mail_to "#{@pet.user.email}", current_user.email, subject: "#{@pet.name}'s Rx is ready", body: "come pick up your Rx"  %></td>
             <% else %>
-              <td><%= @pet.user.phone_number %></td>
+              <td><%= link_to @pet.user.phone_number, twilio_sms_path %></td>
             <% end %>
           <% end %>
       </tr>
