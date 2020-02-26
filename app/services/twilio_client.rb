@@ -5,11 +5,11 @@ class TwilioClient
     @client = Twilio::REST::Client.new account_sid, auth_token
   end
 
-  def send_text(user, pet, med)
+  def send_text(pet_name, phone_number, med_name)
     client.api.account.messages.create(
-        to: user.phone_number,
+        to: phone_number,
         from: twilio_phone_number,
-        body: "#{pet.name}'s prescription for #{med} is ready for pick up"
+        body: "#{pet_name}'s prescription for #{med_name} is ready for pick up"
     )
   end
 
