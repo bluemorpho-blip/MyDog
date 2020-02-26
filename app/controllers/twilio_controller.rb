@@ -4,7 +4,8 @@ class TwilioController < ApplicationController
   def sms
     @pet = Pet.find_by(params[:id])
     @user = @pet.user
-    TwilioClient.new.send_text(@user, @pet)
+    @med = params[:name]
+    TwilioClient.new.send_text(@user, @pet, @med)
     redirect_to @pet
   end
 
