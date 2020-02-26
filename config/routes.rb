@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   resources :veterinarians
   resources :sessions
 
-  get '/twilio/sms'
+  get 'sms' => 'twilio#sms'
 
   root 'sessions#welcome'
 
-  get 'login' => "sessions#new"
+  get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   get 'signup' => 'users#new'

@@ -9,10 +9,12 @@ class TwilioClient
     client.api.account.messages.create(
         to: user.phone_number,
         from: twilio_phone_number,
-        body: message
+        body: message.name
     )
   end
 
+
+  private
 
 
   def account_sid
