@@ -27,7 +27,7 @@
 
 <p>
   <strong>Medications:</strong>
-  <table>
+  <table class="darkTable">
     <thead>
       <tr>
         <th>name</th>
@@ -61,8 +61,8 @@
     <% end %>
    </tbody>
   </table>
-</p>
-
-<%= link_to 'Add Medication', new_med_path %> |
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
-<%= link_to 'Back', pets_path %> |
+  <div class="navbar">
+    <%= link_to 'Add Medication', new_med_path %> |
+    <%= link_to 'Edit', edit_pet_path(@pet) %> |
+    <%= link_to 'Back', pets_path %> |
+  </div>
