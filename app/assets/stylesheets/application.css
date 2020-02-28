@@ -25,6 +25,34 @@ body {
     font-size: 15px;
 }
 
+/* Add a brown background color to the top navigation */
+.topnav {
+    background-color: rgba(54.5, 27.1, 7.5, 0.8);
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: pink;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: pink;
+    color: saddlebrown;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
 .navs-bottom {
     color: #383638;
     visited-color: pink;
@@ -53,21 +81,32 @@ p {
 }
 
 a {
-    color: saddlebrown;
+    color: pink;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 a:visited {
     color: pink;
     font-weight: bold;
 }
+
+a:hover {
+    color: #E6E6E6;
+    font-weight: bold;
+    background: none;
+
+}
+
 h1, h2, h3, h4, h5 {
     color: saddlebrown;
 }
 
 table.darkTable {
     font-family: "Arial Black", Gadget, sans-serif;
+    font-weight: bold;
     border: 2px solid #000000;
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(54.5, 27.1, 7.5, 0.45);
     width: 100%;
     height: 60px;
     text-align: center;
@@ -85,7 +124,7 @@ table.darkTable tr:nth-child(even) {
     background: rgba(0, 0, 0, 0.5);
 }
 table.darkTable thead {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(54.5, 27.1, 7.5, 0.45);
     border-bottom: 3px rgba(0, 0, 0, 0.5);
 }
 table.darkTable thead th {
@@ -101,4 +140,10 @@ table.darkTable thead th:first-child {
 
 table.darkTable tfoot td {
     font-size: 12px;
+}
+
+table.darkTable a:hover {
+    color: #E6E6E6;
+    font-weight: bold;
+    background: none;
 }

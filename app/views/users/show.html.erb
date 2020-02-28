@@ -46,16 +46,17 @@
   </tbody>
 </table>
 
+<div class="topnav">
+  <%= link_to 'Add a pet', new_pet_path(@user.id) %>
+  <%= link_to 'Edit your info', edit_user_path(@user) %>
+  <%= link_to 'Back', users_path %>
+  <% if current_user.admin %>
+    <%= link_to "all users", users_path %>
+    <%= link_to "veterinarians", veterinarians_path %>
+  <% end %>
+</div>
 
-  <div class="navs-bottom">
-    <%= link_to 'Add a pet', new_pet_path(@user.id) %> |
-    <%= link_to 'Edit your info', edit_user_path(@user) %> |
-    <%= link_to 'Back', users_path %> |
-    <% if current_user.admin %>
-      <%= link_to "all users", users_path %> |
-      <%= link_to "veterinarians", veterinarians_path %>
-    <% end %>
-  </div>
+
 
 
 
