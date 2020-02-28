@@ -8,18 +8,25 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <% if !logged_in? %>
-      <%= link_to 'log in', login_path %> |
-      <%= link_to 'sign up', signup_path %> |
-    <% else %>
-      <%= link_to  'log out', {:controller => 'sessions', :action => 'destroy'}, :method => :delete %> |
-    <% end %>
-    <%= link_to 'home', root_path %>
+    <div class="navs">
+      <% if !logged_in? %>
+        <%= link_to 'log in', login_path %> |
+        <%= link_to 'sign up', signup_path %> |
+      <% else %>
+        <%= link_to  'log out', {:controller => 'sessions', :action => 'destroy'}, :method => :delete %> |
+      <% end %>
+      <%= link_to 'home', root_path %>
+    </div>
+   <%# img src="/assets/jack_russell.png" height="300px" width="300px" align="right" %>
 
   </head>
 
   <body>
+  <div class="bg">
+
     <%= yield %>
 
+  </div>
   </body>
+
 </html>

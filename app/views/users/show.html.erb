@@ -20,7 +20,9 @@
   <%= @user.contact_method %>
 </p>
 
-<table>
+<h1>My Pet Info</h1>
+
+<table class="darkTable">
   <thead>
   <tr>
     <th>Pet Name</th>
@@ -44,10 +46,16 @@
   </tbody>
 </table>
 
-<%= link_to 'Add a pet', new_pet_path(@user.id) %> |
-<%= link_to 'Edit your info', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %> |
-<% if current_user.admin %>
-  <%= link_to "all users", users_path %> |
-  <%= link_to "veterinarians", veterinarians_path %>
-<% end %>
+
+  <div class="navs-bottom">
+    <%= link_to 'Add a pet', new_pet_path(@user.id) %> |
+    <%= link_to 'Edit your info', edit_user_path(@user) %> |
+    <%= link_to 'Back', users_path %> |
+    <% if current_user.admin %>
+      <%= link_to "all users", users_path %> |
+      <%= link_to "veterinarians", veterinarians_path %>
+    <% end %>
+  </div>
+
+
+

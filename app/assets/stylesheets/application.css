@@ -13,3 +13,92 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    height: 100%
+}
+
+.navs {
+    color: #383638;
+    visited-color: pink;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.navs-bottom {
+    color: #383638;
+    visited-color: pink;
+    font-weight: bold;
+    font-size: 15px;
+    position: fixed;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("adorable-blur-breed-close-up-406014.jpg");
+    /* Full height */
+    height: 100%;
+    min-height: 220px;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #F8F8F8;
+}
+
+p {
+    color: saddlebrown;
+    font-weight: bold;
+}
+
+a {
+    color: saddlebrown;
+}
+
+a:visited {
+    color: pink;
+    font-weight: bold;
+}
+h1, h2, h3, h4, h5 {
+    color: saddlebrown;
+}
+
+table.darkTable {
+    font-family: "Arial Black", Gadget, sans-serif;
+    border: 2px solid #000000;
+    background-color: rgba(0, 0, 0, 0.35);
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    border-collapse: collapse;
+}
+table.darkTable td, table.darkTable th {
+    border: 1px solid #4A4A4A;
+    padding: 3px 2px;
+}
+table.darkTable tbody td {
+    font-size: 13px;
+    color: #E6E6E6;
+}
+table.darkTable tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.5);
+}
+table.darkTable thead {
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 3px rgba(0, 0, 0, 0.5);
+}
+table.darkTable thead th {
+    font-size: 15px;
+    font-weight: bold;
+    color: #E6E6E6;
+    text-align: center;
+    border-left: 2px rgba(0, 0, 0, 0.5);;
+}
+table.darkTable thead th:first-child {
+    border-left: none;
+}
+
+table.darkTable tfoot td {
+    font-size: 12px;
+}
