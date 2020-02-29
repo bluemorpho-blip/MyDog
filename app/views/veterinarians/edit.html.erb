@@ -1,6 +1,9 @@
-<h1>Editing Veterinarian</h1>
+<h1>edit veterinarian</h1>
 
 <%= render 'form', veterinarian: @veterinarian %>
+<br>
 
-<%= link_to 'Show', @veterinarian %> |
-<%= link_to 'Back', veterinarians_path %>
+<div class="navbar">
+  <%= link_to 'Show', @veterinarian %>
+  <%= link_to 'Back', veterinarians_path %>
+</div>
