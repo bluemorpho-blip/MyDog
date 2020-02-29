@@ -2,7 +2,7 @@
 
 <h1>users</h1>
 
-<table>
+<table class="darkTable">
   <thead>
     <tr>
       <th>Name</th>
@@ -33,5 +33,15 @@
 </table>
 
 <br>
+<p>
+  <br>
+  <br>
+</p>
 
-<%= link_to 'New user', new_user_path %> |
+<div class="navbar">
+    <%= link_to 'New user', new_user_path %>
+    <%= link_to "all users", users_path %>
+    <%= link_to "veterinarians", veterinarians_path %>
+</div>
+
+

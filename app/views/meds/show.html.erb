@@ -19,6 +19,11 @@
   <strong>Pet:</strong>
   <%= @pet.name %>
 </p>
+<br>
+<br>
+<br>
 
-<%= link_to 'Edit', edit_med_path(@med) %> |
-<%= link_to 'Back', meds_path %> |
+<div class="navbar">
+  <%= link_to 'Edit', edit_med_path(@med) %>
+  <%= link_to 'Back', meds_path %>
+</div>

@@ -1,6 +1,9 @@
-<h1>Editing user</h1>
+<h1>edit your info</h1>
 
 <%= render 'form', user: @user %>
+<br>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="navbar">
+  <%= link_to 'Show', @user %>
+  <%= link_to 'Back', users_path %>
+</div>

@@ -1,6 +1,8 @@
-<h1>Editing Med</h1>
+<h1>editing medication</h1>
 
 <%= render 'form', med: @med %>
 
-<%= link_to 'Show', @med %> |
-<%= link_to 'Back', meds_path %>
+<div class="navbar">
+  <%= link_to 'Show', @med %>
+  <%= link_to 'Back', meds_path %>
+</div>

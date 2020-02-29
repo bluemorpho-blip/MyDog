@@ -27,7 +27,7 @@ body {
 
 /* Add a brown background color to the top navigation */
 .navbar {
-    background-color: rgba(54.5, 27.1, 7.5, 0.8);
+    background-color: rgba(54.5, 27.1, 7.5, 0.5);
     overflow: hidden;
 }
 

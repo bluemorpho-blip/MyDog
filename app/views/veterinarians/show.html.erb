@@ -10,5 +10,7 @@
   <%= @veterinarian.admin %>
 </p>
 
-<%= link_to 'Edit', edit_veterinarian_path(@veterinarian) %> |
-<%= link_to 'Back', veterinarians_path %> |
+<div class="navbar"
+  <%= link_to 'Edit', edit_veterinarian_path(@veterinarian) %>
+  <%= link_to 'Back', veterinarians_path %>
+</div>
