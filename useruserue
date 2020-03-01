@@ -1,0 +1,30 @@
+
+[1mFrom:[0m /home/ronald/RubymineProjects/MyDog/app/controllers/sessions_controller.rb @ line 34 SessionsController#create:
+
+    [1;34m11[0m: [32mdef[0m [1;34mcreate[0m [1;34m# github[0m
+    [1;34m12[0m:   client_id     = [31m[1;31m'[0m[31mb412366a062e10790462[1;31m'[0m[31m[0m
+    [1;34m13[0m:   client_secret = [31m[1;31m'[0m[31m47187aa0cb5906e2ba8bb7f50aa168830d146d94[1;31m'[0m[31m[0m
+    [1;34m14[0m:   code          = params[[33m:code[0m]
+    [1;34m15[0m:   response      = [1;34;4mFaraday[0m.post([31m[1;31m"[0m[31mhttps://github.com/login/oauth/access_token?client_id=#{client_id}[0m[31m&client_secret=#{client_secret}[0m[31m&code=#{code}[0m[31m[1;31m"[0m[31m[0m)
+    [1;34m16[0m: 
+    [1;34m17[0m:   pairs = response.body.split([31m[1;31m"[0m[31m&[1;31m"[0m[31m[0m)
+    [1;34m18[0m:   response_hash = {}
+    [1;34m19[0m:   pairs.each [32mdo[0m |pair|
+    [1;34m20[0m:     key, value = pair.split([31m[1;31m"[0m[31m=[1;31m"[0m[31m[0m)
+    [1;34m21[0m:     response_hash[key] = value
+    [1;34m22[0m:   [32mend[0m
+    [1;34m23[0m: 
+    [1;34m24[0m:   token = response_hash[[31m[1;31m"[0m[31maccess_token[1;31m"[0m[31m[0m]
+    [1;34m25[0m: 
+    [1;34m26[0m:   oauth_response = [1;34;4mFaraday[0m.get([31m[1;31m"[0m[31mhttps://api.github.com/user?access_token=#{token}[0m[31m[1;31m"[0m[31m[0m)
+    [1;34m27[0m:   auth = [1;34;4mJSON[0m.parse(oauth_response.body)
+    [1;34m28[0m: 
+    [1;34m29[0m:   user          = [1;34;4mUser[0m.find_or_create_by([35muid[0m: auth[[31m[1;31m"[0m[31mid[1;31m"[0m[31m[0m])
+    [1;34m30[0m:   user.username = auth[[31m[1;31m"[0m[31mlogin[1;31m"[0m[31m[0m]
+    [1;34m31[0m:   user.uid      = auth[[31m[1;31m"[0m[31mid[1;31m"[0m[31m[0m]
+    [1;34m32[0m:   user.token    = token
+    [1;34m33[0m:   user.save
+ => [1;34m34[0m:   binding.pry
+    [1;34m35[0m: 
+    [1;34m36[0m: [32mend[0m
+

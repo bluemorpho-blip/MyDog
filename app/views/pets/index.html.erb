@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pets</h1>
+<h1>pets</h1>
 
 <table class="darkTable">
   <thead>
@@ -21,7 +21,7 @@
         <td><%= pet.dog_cat %></td>
         <td><%= pet.breed %></td>
         <td><%= pet.veterinarian.name %></td>
-        <td><%= pet.name %></td>
+        <td><%= pet.user.name %></td>
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
         <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>

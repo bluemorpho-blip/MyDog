@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   get 'sms' => 'twilio#sms'
 
+  # github incoming authorization
+  get '/auth/github/callback', to: 'sessions#create'
+
   root 'sessions#welcome'
 
   get 'login' => 'sessions#new'

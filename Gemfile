@@ -26,6 +26,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'twilio-ruby'
 gem 'dotenv-rails'
 
+# Sending http requests
+gem 'faraday'
+
+gem 'pry'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
