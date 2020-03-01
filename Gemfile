@@ -24,6 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Manage accounts
 # Twilio to manage sms messages
 gem 'twilio-ruby'
+gem 'dotenv-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
