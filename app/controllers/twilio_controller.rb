@@ -4,7 +4,7 @@ class TwilioController < ApplicationController
   def sms
     pet = params[:pet_id]
     pet_name = params[:pet_name]
-    phone_number = params[:phone_number].to_i
+    phone_number = params[:phone_number]
     med_name = params[:med_name]
     TwilioClient.new.send_text(pet_name, phone_number, med_name)
     redirect_to pets_path
