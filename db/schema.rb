@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_02_16_224102) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.integer "phone_number"
+    t.integer "phone_number", limit: 12
     t.string "contact_method"
     t.string "password_digest"
     t.boolean "admin", default: false
