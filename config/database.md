@@ -15,10 +15,16 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
+default: &default
+  adapter: sqlite3
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
 
 development:
-  adapter: sqlite3
-  database: database.db
+  <<: *default
+  database: bd/development.sqlite3
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -51,8 +57,8 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: sqlite3
-  database: database.db
+  <<: *default
+  database: bd/test.sqlite3
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -74,8 +80,5 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  adapter: postgresql
-  database: mission
-  username: username
-  password: password
-  host: localhost
+  <<: *default
+  database: db/production.sqlite3

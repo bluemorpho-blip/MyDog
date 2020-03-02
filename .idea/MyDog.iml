@@ -30,6 +30,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activejob (v6.0.2.1, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v6.0.2.1, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v6.0.2.1, rbenv: 2.7.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activerecord-postgresql-adapter (v0.0.1, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v6.0.2.1, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v6.0.2.1, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.7.0, rbenv: 2.7.0) [gem]" level="application" />
@@ -66,6 +67,7 @@
     <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.1.1, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.5.2, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.10.9, rbenv: 2.7.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pg (v1.2.2, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.12.2, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v4.0.3, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v4.3.3, rbenv: 2.7.0) [gem]" level="application" />
