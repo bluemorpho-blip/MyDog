@@ -2,7 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @user.name %>
+  <%= "#{@user.first_name} #{@user.last_name}" %>
 </p>
 
 <p>
@@ -50,7 +50,7 @@
   <%= link_to 'Add a pet', new_pet_path(@user.id) %>
   <%= link_to 'Edit your info', edit_user_path(@user) %>
   <%= link_to 'Back', users_path %>
-  <% if current_user.admin %>
+  <% if current_user.admin == true %>
     <%= link_to "all users", users_path %>
     <%= link_to "veterinarians", veterinarians_path %>
   <% end %>

@@ -18,15 +18,15 @@ class TwilioClient
 
 
   def account_sid
-    Rails.application.credentials.twilio[:account_sid]
+    ENV["account_sid"]
   end
 
   def auth_token
-    Rails.application.credentials.twilio[:auth_token]
+    ENV["auth_token"]
   end
 
   def twilio_phone_number
-    Rails.application.credentials.twilio[:twilio_phone_number]
+    ENV["twilio_phone_number"]
   end
 
 end

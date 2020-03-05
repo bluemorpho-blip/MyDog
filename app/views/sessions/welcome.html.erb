@@ -2,7 +2,7 @@
 <h1>welcome</h1>
 
 <% if current_user %>
-  <h2>You are logged in, <%= link_to current_user.first_name, user_path(current_user.id) %></h2>
+  <h2>You are logged in, <%= link_to current_user.name, user_path(current_user.id) %></h2>
 <% else %>
   <h2><%= link_to 'Sign up', signup_path %> or <%= link_to 'log in', login_path %> to get started!</h2>
 <% end %>
