@@ -34,13 +34,19 @@ ActiveRecord::Schema.define(version: 2020_02_16_224102) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
+    t.string "last_name"
     t.string "email"
-    t.integer "phone_number", limit: 12
+    t.string "phone_number"
     t.string "contact_method"
     t.string "password_digest"
     t.boolean "admin", default: false
     t.integer "med_id"
+    t.string "token"
+    t.string "refresh_token"
+    t.string "uid"
+    t.string "provider"
+    t.string "oauth_expires_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

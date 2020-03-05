@@ -6,5 +6,15 @@
       <auth-provider>no-auth</auth-provider>
       <schema-mapping />
     </data-source>
+    <data-source name="Rails MyDog: test" uuid="79729688-6a71-4300-8cd8-5c8a1a2a3231">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
+      <auth-provider>no-auth</auth-provider>
+      <schema-mapping />
+    </data-source>
+    <data-source name="Rails MyDog: production" uuid="77d0cf18-6af2-4067-b79c-52a6ab8600df">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>username</user-name>
+      <schema-mapping />
+    </data-source>
   </component>
 </project>
