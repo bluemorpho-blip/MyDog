@@ -10,9 +10,9 @@
 
     <div class="navbar">
       <% if !logged_in? %>
-        <%= link_to 'login', '/auth/google' %>
+        <%= link_to 'sign in', '/auth/google' %>
       <% else %>
-        <%= link_to  'log out', {:controller => 'sessions', :action => 'destroy'}, :method => :delete %>
+        <%= link_to  'sign out', {:controller => 'sessions', :action => 'destroy'}, :method => :delete %>
       <% end %>
       <%= link_to 'home', root_path %>
     </div>
@@ -29,5 +29,6 @@
   </div>
 
   </body>
+<footer style="text-align:right;">&copy; Copyright 2020 MyDog.bluemorpho-blip</footer>
 
 </html>
