@@ -13,9 +13,7 @@ class TwilioClient
     )
   end
 
-
   private
-
 
   def account_sid
     ENV["account_sid"]

@@ -23,10 +23,6 @@ class ApplicationController < ActionController::Base
     not_authorized("You must be an admin to view that page.") unless current_user.admin
   end
 
-  def current_user_is?(user)
-    user == current_user
-  end
-
   def current_user
     @current_user ||= User.find(session[:id]) if session[:id]
   end

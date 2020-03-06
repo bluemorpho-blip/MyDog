@@ -55,4 +55,5 @@ class VeterinariansController < ApplicationController
     def veterinarian_params
       params.require(:veterinarian).permit(:name, :admin, :email, :password_digest)
     end
+
 end
