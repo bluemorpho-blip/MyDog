@@ -9,4 +9,3 @@ Veterinarian.create(name: 'Cat Doctor', email: 'catdr@email.com', password: 'pas
 Veterinarian.create(name: 'Dog Doctor', email: 'dogdr@email.com', password: 'password', admin: "false")
 Veterinarian.create(name: 'Bird Doctor', email: 'birddr@email.com', password: 'password', admin: "false")
 Veterinarian.create(name: 'horse Doctor', email: 'horsedr@email.com', password: 'password', admin: "false")
-User.create(name: 'Admin', email: 'admin@email.com', phone_number: 3862435991, contact_method: 'text', password: 'password', admin: 'true')
