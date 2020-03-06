@@ -24,7 +24,6 @@ gem 'bcrypt', '~> 3.1.7'
 # Manage accounts
 # Twilio to manage sms messages
 gem 'twilio-ruby'
-gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
 # like dotenv, hides sensitive stuff, but maybe actually works
 gem 'figaro'
