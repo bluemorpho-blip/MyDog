@@ -48,7 +48,7 @@
           <td><%= med.name %></td>
           <td><%= med.dose %></td>
           <td><%= med.instructions %></td>
-          <td><%= mail_to "admin@mydog.com", "admin@mydog.com", subject: "#{@pet.user.name} refill request", body: "Refill request for: #{@pet.user.name}, pet: #{@pet.name}, medication: #{med.name} dose: #{med.dose}  instructions: #{med.instructions} " %></td>
+          <td><%= mail_to "refill@mydog.com", "refill@mydog.com", subject: "#{@pet.user.name} refill request", body: "Refill request for: #{@pet.user.name}, pet: #{@pet.name}, medication: #{med.name} dose: #{med.dose}  instructions: #{med.instructions} " %></td>
           <td align="center"><%= @pet.user.contact_method %></td>
           <% if current_user.admin %>
             <% if @pet.user.contact_method == "email" %>

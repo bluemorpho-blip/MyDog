@@ -14,7 +14,7 @@ class User < ApplicationRecord
     user.attributes = {
         provider: auth[:provider],
         uid: auth[:uid],
-        email: auth[:info][:email],
+        #email: auth[:info][:email],
         first_name: auth[:info][:first_name],
         last_name: auth[:info][:last_name],
         token: auth[:credentials][:token],
