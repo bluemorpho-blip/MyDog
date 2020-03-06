@@ -27,7 +27,7 @@ body {
 
 /* Add a brown background color to the top navigation */
 .navbar {
-    background-color: rgba(54.5, 27.1, 7.5, 0.5);
+    background-color: rgba(54, 34, 4, 0.78);
     overflow: hidden;
 }
 
@@ -122,7 +122,7 @@ table.darkTable tbody td {
     color: #E6E6E6;
 }
 table.darkTable tr:nth-child(even) {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
 }
 table.darkTable thead {
     background: rgba(54.5, 27.1, 7.5, 0.45);

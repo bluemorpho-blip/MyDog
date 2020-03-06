@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
   def create
     user = User.update_or_create(request.env["omniauth.auth"])
     session[:id] = user.id
-    redirect_to root_path
+    redirect_to edit_user_path(user)
   end
 
   def create_stable

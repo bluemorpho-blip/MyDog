@@ -27,12 +27,18 @@
     <%= form.hidden_field(:admin, :value => "false") %>
   </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password_digest %>
-  </div>
+   <div class="field">
+     <p>
+       <% if current_user.try(:admin) %>
+         <%= form.label :admin %>
+         <%= form.check_box :admin, :value => "true" %>
+       <% else %>
+         <%= form.hidden_field(:admin, :value => "false") %>
+         </p>
+         </div>
+       <% end %>
 
-  <div class="actions">
+    <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
