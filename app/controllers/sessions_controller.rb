@@ -4,17 +4,24 @@ class SessionsController < ApplicationController
     @users= User.all
   end
 
-  def new
-    @user = User.new
-  end
-
   def create_login_session
-    user = User.find_or_create_by(params[:id])
-    session[:id] = user.id
-    redirect_to user_path(user)
+    if (user = User.find_by(user_params(:id)))
+      if user.authenticate(params[:user][:password])
+        session[:user_id] = user.id
+        redirect_to user_path(user), notice: "Welcome, #{user.name}"
+      else
+        flash[:message] = "improper credentials entered"
+        @users = User.all
+        render 'login'
+      end
+    else
+      flash[:message] = "user not found"
+      @users = User.all
+      render 'login'
+    end
   end
 
-  def create
+  def create #Oauth session
     user = User.update_or_create(request.env["omniauth.auth"])
     if user.persisted?
       session[:id] = user.id
@@ -27,6 +34,12 @@ class SessionsController < ApplicationController
   def destroy
     session.clear
     redirect_to root_path
+  end
+
+  private
+
+  def user_params(*args)
+    params.require(:user).permit(*args)
   end
 
 end

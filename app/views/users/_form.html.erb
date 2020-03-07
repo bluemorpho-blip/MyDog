@@ -38,6 +38,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :password %><br>
+    <%= form.password_field :password %><br>
+  </div>
+
+  <div class="field">
     <p>preferred contact method:</p>
     <p>
       <%= form.radio_button :contact_method, "text" %>
