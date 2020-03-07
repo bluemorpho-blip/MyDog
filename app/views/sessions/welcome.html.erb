@@ -9,7 +9,7 @@
   <% if current_user %>
   <h2>You are logged in, <%= link_to current_user.name, user_path(current_user.id) %></h2>
 <% else %>
-  <input type="image" src="assets/btn_google_signin_dark_pressed_web.png" onclick="location.href='/auth/google'">
+  <input type="image" src="/assets/btn_google_signin_dark_pressed_web.png" onclick="location.href='/auth/google'">
 <% end %>
 
 

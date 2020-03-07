@@ -10,7 +10,7 @@
 
     <div class="navbar">
       <% if !logged_in? %>
-        <%= link_to 'sign in', '/auth/google' %>
+        <%= link_to 'sign in', {:controller => 'sessions', :action => 'new'} %>
       <% else %>
         <%= link_to  'sign out', {:controller => 'sessions', :action => 'destroy'}, :method => :delete %>
       <% end %>
