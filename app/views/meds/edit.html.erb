@@ -1,8 +1,8 @@
-<h1>editing medication</h1>
+<h1>edit medication</h1>
 
 <%= render 'form', med: @med %>
 
 <div class="navbar">
-  <%= link_to 'Show', @med %>
-  <%= link_to 'Back', meds_path %>
+  <%= link_to 'show', @med %>
+  <%= link_to 'Back', request.referer.present? ? request.referer : default_path %>
 </div>

@@ -16,9 +16,9 @@
       <tr>
         <td><%= veterinarian.name %></td>
         <td><%= veterinarian.admin %></td>
-        <td><%= link_to 'Show', veterinarian %></td>
-        <td><%= link_to 'Edit', edit_veterinarian_path(veterinarian) %></td>
-        <td><%= link_to 'Destroy', veterinarian, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'show', veterinarian %></td>
+        <td><%= link_to 'edit', edit_veterinarian_path(veterinarian) %></td>
+        <td><%= link_to 'destroy', veterinarian, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,5 +27,6 @@
 <br>
 
 <div class="navbar">
-  <%= link_to 'New Veterinarian', new_veterinarian_path %>
+  <%= link_to 'new veterinarian', new_veterinarian_path %>
+  <%= link_to 'back', request.referer.present? ? request.referer : default_path %>
 </div>

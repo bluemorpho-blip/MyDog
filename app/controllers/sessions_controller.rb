@@ -9,10 +9,11 @@ class SessionsController < ApplicationController
   end
 
   def create_login
-    @user = User.find_by_email(params[:email])
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      redirect_to user_path(@user)
+    user = User.find_by_email(params[:email])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      user.save
+      redirect_to user_path(user)
     else
       render 'new'
     end
@@ -20,7 +21,7 @@ class SessionsController < ApplicationController
 
   def create #Oauth session
     user = User.update_or_create(request.env["omniauth.auth"])
-      session[:id] = user.id
+      session[:user_id] = user.id
       redirect_to edit_user_path(user)
   end
 

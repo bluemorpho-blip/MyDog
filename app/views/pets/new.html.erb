@@ -3,5 +3,5 @@
 <%= render 'form', pet: @pet %>
 
 <div class="navbar">
-  <%= link_to 'Back', pets_path %>
+  <%= link_to 'Back', request.referer.present? ? request.referer : default_path %>
 </div>

@@ -3,6 +3,6 @@
 <%= render 'form', pet: @pet %>
 
 <div class="navbar">
-  <%= link_to 'Show', @pet %>
-  <%= link_to 'Back', pets_path %>
+  <%= link_to 'show', @pet %>
+  <%= link_to 'back', request.referer.present? ? request.referer : default_path %>
 </div>

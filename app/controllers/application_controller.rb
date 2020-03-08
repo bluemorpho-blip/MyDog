@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     if user.nil?
       not_authorized("Login to view this page!") unless logged_in?
     else
-      not_authorized("Login to view this page!") unless user == current_user
+      not_authorized("Login to view this page!") unless current_user
     end
   end
 
@@ -24,12 +24,12 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find(session[:id]) if session[:id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def require_login
     unless logged_in?
-      redirect_to root_path, notice: "You must be logged in to access this section"
+      render root_path, notice: "You must be logged in to access this section"
     end
   end
 

@@ -12,11 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :medication %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
+    <%= form.label :pet_name %>
     <%= collection_select :med, :pet_id, current_user.pets, :id, :name, { prompt: 'Please select your pet from this dropdown' } %>
   </div>
 
