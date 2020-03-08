@@ -1,23 +1,23 @@
 class SessionsController < ApplicationController
 
   def login
-    @users= User.all
+    @users = User.all
+  end
+
+  def new
+    @user = User.new
   end
 
   def create_login_session
-    if (user = User.find_by(user_params(:id)))
-      if user.authenticate(params[:user][:password])
-        session[:user_id] = user.id
-        redirect_to user_path(user), notice: "Welcome, #{user.name}"
+    if (@user = User.find_by(user_params(:uid)))
+      if @user.authenticate(params[:user][:password])
+        session[:user_id] = @user.id
+        redirect_to user_path(@user), notice: "Welcome, #{@user.name}"
       else
-        flash[:message] = "improper credentials entered"
-        @users = User.all
-        render 'login'
+        render 'new', notice: "improper credentials entered"
       end
     else
-      flash[:message] = "user not found"
-      @users = User.all
-      render 'login'
+      render 'new', notice: "user not found"
     end
   end
 

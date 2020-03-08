@@ -12,9 +12,9 @@ class ApplicationController < ActionController::Base
 
   def authorize(user = nil)
     if user.nil?
-      not_authorized("Login to view this page!") unless logged_in? || current_user.admin
+      not_authorized("Login to view this page!") unless logged_in? || user.admin
     else
-      not_authorized("Login to view this page!") unless user == current_user || current_user.admin
+      not_authorized("Login to view this page!") unless user == current_user || user.admin
     end
   end
 
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find(session[:id]) if session[:id]
+    User.find_by(id: session[:user_id])
   end
 
   def require_login
