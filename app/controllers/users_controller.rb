@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    if (@user = User.find_by(id: params[:id]))
+    if (@user = User.find_by_id(params[:id]))
       authorize(@user)
     else
       not_authorized("only accessible to registered user")
@@ -22,18 +22,9 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    if (@user = User.new(user_params))
-      if @user.save
-        session[:user_id] = @user.id
-        # flash[:message] = "Welcome, #{@user.name}"
-        redirect_to user_path(@user)
-      else
-      render :new
-      end
-    else
-      flash[:message] = "The was an error creating the user"
-      redirect_to signup_path
-    end
+    @user = User.create(params.require(:user).permit(:email, :password))
+    session[:user_id] = @user.id
+    redirect_to root_path
   end
 
   # GET /users/1/edit
@@ -64,6 +55,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit([:uid, :first_name, :last_name, :email, :phone_number, :contact_method])
+      params.require(:user).permit([:uid, :first_name, :last_name, :email, :phone_number, :contact_method, :password])
     end
 end

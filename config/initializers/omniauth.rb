@@ -8,6 +8,6 @@ Rails.application.config.middleware.use OmniAuth::Builder do
         :access_type => 'offline'
     }
 
-    OmniAuth.config.on_failure = SessionsController.action(:welcome)
+      # OmniAuth.config.on_failure = SessionsController.action(:welcome)
 
 end

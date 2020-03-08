@@ -1,15 +1,12 @@
-<h1>log in</h1>
+<h1>Login</h1>
+<%= form_tag '/login' do %>
+  <%= label_tag :email %>
+  <%= text_field_tag :email %><br>
 
-    <%= form_for @user, url: login_path, method: :post do |f| %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %><br>
 
-      <%= f.label :email %><br>
-      <%= f.email_field :email %><br>
-
-      <%= f.label :password %><br>
-      <%= f.password_field :password %><br>
-
-      <br>
-      <%= f.submit "log in" %>
-    <% end %>
+  <%= submit_tag "log in" %>
+<%end%>
 
 <p><h2>New user? <%= link_to "Sign up now!", signup_path %></h2></p>
