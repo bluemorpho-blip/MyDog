@@ -13,16 +13,16 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       user.save
-      redirect_to user_path(user)
+      redirect_to root_path, notice: "successfully signed in as #{user.email}"
     else
-      render 'new'
+      redirect_to signin_path, alert: 'incorrect email and/or password, try signing in with Google then updating your account'
     end
   end
 
   def create #Oauth session
     user = User.update_or_create(request.env["omniauth.auth"])
       session[:user_id] = user.id
-    redirect_to root_path
+    redirect_to root_path, notice: "successfully signed in with Google as #{user.email}"
       # redirect_to edit_user_path(user)
   end
 

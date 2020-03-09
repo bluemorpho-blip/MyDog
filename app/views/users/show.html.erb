@@ -34,7 +34,7 @@
   <tbody>
     <tr>
       <% @user.pets.each do |pet| %>
-      <td><%= pet.name %></td>
+      <td><%= link_to pet.name, pet %></td>
       <td><%= pet.dog_cat %></td>
       <td><%= pet.breed %></td>
       <td><%= pet.veterinarian.name %></td>

@@ -66,7 +66,8 @@ body {
     background-image: url("adorable-blur-breed-close-up-406014.jpg");
     /* Full height */
     height: 100%;
-    min-height: 220px;
+    /* min-height: 220px; */
+    min-height: 400px;
     postion: relative;
 
     /* Center and scale the image nicely */
@@ -79,6 +80,10 @@ body {
 p {
     color: saddlebrown;
     font-weight: bold;
+}
+
+p.alert {
+    color: red;
 }
 
 a {
@@ -112,6 +117,8 @@ table.darkTable {
     height: 60px;
     text-align: center;
     border-collapse: collapse;
+    position: relative;
+
 }
 table.darkTable td, table.darkTable th {
     border: 1px solid #4A4A4A;

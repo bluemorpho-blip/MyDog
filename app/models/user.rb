@@ -15,8 +15,11 @@ class User < ApplicationRecord
     user.attributes = {
         provider: auth[:provider],
         uid: auth[:uid],
-        password: SecureRandom.urlsafe_base64,
-        #email: auth[:info][:email],
+        # password: SecureRandom.urlsafe_base64,
+        # not updating pw stops it from being reset
+        # every time a user signs in with Google
+        # email: auth[:info][:email],
+        # allow the user to set a preferred email
         first_name: auth[:info][:first_name],
         last_name: auth[:info][:last_name],
         token: auth[:credentials][:token],
