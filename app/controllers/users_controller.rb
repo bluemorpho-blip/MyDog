@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.create(params.require(:user).permit(:email, :password))
+    @user = User.create(params.require(:user).permit(:first_name, :last_name, :email, :phone_number, :contact_method, :password))
     session[:user_id] = @user.id
     redirect_to root_path
   end

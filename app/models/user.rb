@@ -8,6 +8,7 @@ class User < ApplicationRecord
   # validates :name, uniqueness: true
   validates :email, uniqueness: true
   validates :phone_number, uniqueness: true
+  validates :contact_method, presence: true
 
   def self.update_or_create(auth)
     user = User.find_by(uid: auth[:uid]) || User.new

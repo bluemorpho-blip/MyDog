@@ -22,7 +22,8 @@ class SessionsController < ApplicationController
   def create #Oauth session
     user = User.update_or_create(request.env["omniauth.auth"])
       session[:user_id] = user.id
-      redirect_to edit_user_path(user)
+    redirect_to root_path
+      # redirect_to edit_user_path(user)
   end
 
   def destroy
