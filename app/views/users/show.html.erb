@@ -49,7 +49,7 @@
 <div class="navbar">
   <%= link_to 'add a pet', new_pet_path(@user.id) %>
   <%= link_to 'edit your info', edit_user_path(@user) %>
-  <%= link_to 'back', request.referer.present? ? request.referer : default_path %>
+
   <% if @user.admin %>
     <%= link_to "all users", users_path %>
     <%= link_to "veterinarians", veterinarians_path %>

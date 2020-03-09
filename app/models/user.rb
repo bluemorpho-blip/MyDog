@@ -30,4 +30,15 @@ class User < ApplicationRecord
     "#{self.first_name} #{self.last_name}"
   end
 
+  def self.search(search)
+    if search
+      owner_name = User.find_by(last_name: search)
+      if owner_name
+        self.where(id: owner_name)
+      else
+        @users = User.all
+      end
+    end
+  end
+
 end

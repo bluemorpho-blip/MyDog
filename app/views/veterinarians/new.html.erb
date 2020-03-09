@@ -8,8 +8,3 @@
   <h1>You must be an admin to view this page</h1>
 
 <% end %>
-<br>
-
-<div class="navbar">
-  <%= link_to 'back', request.referer.present? ? request.referer : default_path %>
-</div>

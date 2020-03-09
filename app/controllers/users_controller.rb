@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = User.search(params[:search]) || @users = User.all
   end
 
   # GET /users/new
@@ -55,6 +55,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit([:uid, :first_name, :last_name, :email, :phone_number, :contact_method, :password])
+      params.require(:user).permit([:uid, :first_name, :last_name, :email, :phone_number, :contact_method, :password, :search])
     end
 end

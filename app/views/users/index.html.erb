@@ -37,7 +37,6 @@
 </p>
 
 <div class="navbar">
-    <%= link_to 'back', request.referer.present? ? request.referer : default_path %>
     <%= link_to 'new user', new_user_path %>
     <%= link_to "all users", users_path %>
     <%= link_to "veterinarians", veterinarians_path %>
