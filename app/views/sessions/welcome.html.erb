@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1><u>Welcome to Local Dog Clinic</u></h1>
 <p>
-
-<% if current_user.admin %>
+  <% if current_user.try(:admin) %>
   <p>owner quick search: (last name)</p>
   <%= form_tag users_path, :method => 'get' do %>
 
