@@ -8,27 +8,23 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <div class="navbar">
-      <%= link_to 'home', root_path %>
-      <% if !logged_in? %>
-        <%= link_to 'sign up', signup_path %>
-        <%= link_to 'sign in', {:controller => 'sessions', :action => 'new'} %>
-      <% else %>
-        <%= link_to  'sign out', {:controller => 'sessions', :action => 'destroy'}, :method => :delete %>
-      <% end %>
-
-    </div>
-
-   <%# img src="/assets/jack_russell.png" height="300px" width="300px" align="right" %>
-
   </head>
 
   <body>
+  <%= render "layouts/navbar_top" %>
+
     <div class="bg">
+      <div class="container">
 
       <%= yield %>
 
     </div>
+  </div>
+  <br>
+  <div class="container_lower">
+    <%= render "layouts/navbar_bottom" %>
+
+  </div>
   </body>
 
 <footer style="text-align:right;">&copy; Copyright 2020 MyDog.bluemorpho-blip</footer>

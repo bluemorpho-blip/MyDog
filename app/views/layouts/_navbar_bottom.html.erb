@@ -1,0 +1,10 @@
+<div class="navbar bottom">
+    <% if logged_in? %>
+    <%= link_to 'add a pet', new_pet_path(@user) %>
+    <%= link_to 'edit your info', edit_user_path(current_user.id) %>
+      <% if logged_in? && current_user.admin %>
+        <%= link_to "all clients", users_path %>
+        <%= link_to "veterinarians", veterinarians_path %>
+      <% end %>
+   <% end %>
+</div>

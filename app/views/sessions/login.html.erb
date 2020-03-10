@@ -1,13 +1,9 @@
-<div class="container">
+<h1>login</h1>
 
-  <h1>login</h1>
-
-    <%= form_tag(login_path) do %>
-      <%= label_tag :'Your email address' %>
-      <%= text_field :user, :email, id: "email" %><br>
-      <%= label_tag :"Password" %>
-      <%= password_field :user, :password, id: "password" %>
-      <%= submit_tag "Sign In" %>
-    <% end %>
-
-</div>
+<%= form_tag(login_path) do %>
+  <%= label_tag :'Your email address' %>
+  <%= text_field :user, :email, id: "email" %><br>
+  <%= label_tag :"Password" %>
+  <%= password_field :user, :password, id: "password" %>
+  <%= submit_tag "Sign In" %>
+<% end %>

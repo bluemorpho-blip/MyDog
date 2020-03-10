@@ -1,0 +1,16 @@
+
+<div class="navbar">
+  <%= link_to 'home', root_path %>
+  <% if !logged_in? %>
+    <%= link_to 'sign up', signup_path %>
+    <div class="navbar-right">
+    <%= link_to 'sign in', {:controller => 'sessions', :action => 'new'} %>
+    </div>
+  <% else %>
+    <%= link_to 'dashboard', user_path(current_user) %>
+    <div class="navbar-right">
+    <%= link_to  'sign out', {:controller => 'sessions', :action => 'destroy'}, :method => :delete %>
+    </div>
+  <% end %>
+
+</div>

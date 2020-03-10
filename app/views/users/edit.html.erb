@@ -1,12 +1,7 @@
-<div class="container">
+<h1><%= @user.name %></h1>
 
-  <h1>owner dashboard</h1>
+<p>update your info if needed</p>
 
-  <h2>Welcome, <%= @user.name %></h2>
+<p class="alert">* add a password if you would like use the sign in page</p>
 
-  <p>update your info if needed</p>
-  <p class="alert">* add a password if you would like use the sign in page</p>
-
-  <%= render 'form', user: @user %>
-
-</div>
+<%= render 'form', user: @user %>

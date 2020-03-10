@@ -1,26 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
+<h1><u>Welcome to Local Dog Clinic</u></h1>
 
-  <h1><u>Welcome to Local Dog Clinic</u></h1>
+<% if logged_in? %>
+  <h2>You are logged in, <%= link_to "#{current_user.name}", user_path(current_user.id) %></h2>
+<% else %>
+  <input type="image" src="/assets/btn_google_signin_dark_pressed_web.png" onclick="location.href='/auth/google'">
 
-  <% if logged_in? %>
-    <h2>You are logged in, <%= link_to "#{current_user.name}", user_path(current_user.id) %></h2>
-  <% else %>
-    <input type="image" src="/assets/btn_google_signin_dark_pressed_web.png" onclick="location.href='/auth/google'">
+  <h3>Sign in to request medication refills for your pet</h3>
+  <h3>We'll contact you by text or email when your refill is ready!</h3>
+<% end %>
+
+
+<p>
+  <% if logged_in? && current_user.admin %>
+  <p>owner quick search: (last name)</p>
+  <%= form_tag users_path, :method => 'get' do %>
+
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag("search", :last_name => nil) %>
   <% end %>
-
-  <p>
-    <% if logged_in? && current_user.admin %>
-    <p>owner quick search: (last name)</p>
-    <%= form_tag users_path, :method => 'get' do %>
-
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag("search", :last_name => nil) %>
-    <% end %>
-  <% else %>
-    <h3>Sign in to request medication refills for your pet</h3>
-    <h3>We'll contact you by text or email when your refill is ready!</h3>
-  <% end %>
-
-</div>
+<% end %>

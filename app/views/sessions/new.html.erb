@@ -1,19 +1,15 @@
 <p id="alert"><%= alert %></p>
 
-<div class="container">
+<h1>sign in</h1>
 
-  <h1>sign in</h1>
+<%= form_tag '/signin' do %>
+  <%= label_tag :email %>
+  <%= text_field_tag :email %><br>
 
-  <%= form_tag '/signin' do %>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %><br>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %><br>
 
-    <%= label_tag :password %>
-    <%= password_field_tag :password %><br>
+  <%= submit_tag "log in" %>
+<%end%>
 
-    <%= submit_tag "log in" %>
-  <%end%>
-
-  <p><h2>new user? <%= link_to "sign up now!", signup_path %></h2></p>
-
-</div>
+<p><h2>new user? <%= link_to "sign up now!", signup_path %></h2></p>

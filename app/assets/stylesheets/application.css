@@ -29,12 +29,17 @@ body {
 .navbar {
     background-color: rgba(54, 34, 4, 0.78);
     overflow: hidden;
+    position: relative;
 }
 
 .bottom {
     position: absolute;
     width: 100%;
     bottom: 0;
+}
+
+.navbar-right {
+    float: right;
 }
 
 /* Style the links inside the navigation bar */
@@ -121,7 +126,7 @@ table.darkTable {
     text-align: center;
     border-collapse: collapse;
     position: absolute;
-    bottom: 50px;
+    bottom: 10px;
 }
 table.darkTable td, table.darkTable th {
     border: 1px solid #4A4A4A;
@@ -164,5 +169,12 @@ div.container {
     height: 100%;
     width: 100%;
     overflow: auto;
-    /* border: dashed 1px red; */
+    /* border: dashed 1px red;  <- used for mapping layout */
+}
+
+div.container_lower {
+    position: relative;
+    height: 28px;
+    width: 100%
+    /* border: dashed 1px red;  <- used for mapping layout */
 }

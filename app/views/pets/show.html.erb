@@ -1,78 +1,72 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
+<p>
+  <strong>Name:</strong>
+  <%= @pet.name %>
+</p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @pet.name %>
-  </p>
+<p>
+  <strong>Type:</strong>
+  <%= @pet.dog_cat %>
+</p>
 
-  <p>
-    <strong>Type:</strong>
-    <%= @pet.dog_cat %>
-  </p>
+<p>
+  <strong>Breed:</strong>
+  <%= @pet.breed %>
+</p>
 
-  <p>
-    <strong>Breed:</strong>
-    <%= @pet.breed %>
-  </p>
+<p>
+  <strong>Veterinarian:</strong>
+  <%= @pet.veterinarian.name %>
+</p>
 
-  <p>
-    <strong>Veterinarian:</strong>
-    <%= @pet.veterinarian.name %>
-  </p>
+<p>
+  <strong>Owner:</strong>
+  <%= @pet.user.name %>
+</p>
 
-  <p>
-    <strong>Owner:</strong>
-    <%= @pet.user.name %>
-  </p>
+<p>
+  <strong>Medications:</strong>
+  <table class="darkTable">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>dose</th>
+        <th>instructions</th>
+        <th>request refill</th>
+        <th colspan="3">links</th>
+        <% if current_user.admin %>
+          <th>contact method</th>
+          <th>refill ready</th>
 
-  <p>
-    <strong>Medications:</strong>
-    <table class="darkTable">
-      <thead>
-        <tr>
-          <th>name</th>
-          <th>dose</th>
-          <th>instructions</th>
-          <th>request refill</th>
-          <th colspan="3">links</th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <% @pet.meds.each do |med| %>
+          <td><%= link_to med.name, edit_med_path(med) %></td>
+          <td><%= med.dose %></td>
+          <td><%= med.instructions %></td>
+          <td><%= mail_to "refill@mydog.com", "refill@mydog.com", subject: "#{@pet.user.name} refill request", body: "Refill request for: #{@pet.user.name}, pet: #{@pet.name}, medication: #{med.name} dose: #{med.dose}  instructions: #{med.instructions} " %></td>
+
+
+          <td><%= link_to 'Show', med %></td>
+          <td><%= link_to 'Edit', edit_med_path(med) %></td>
+          <td><%= link_to 'Destroy',med, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
           <% if current_user.admin %>
-            <th>contact method</th>
-            <th>refill ready</th>
-
-          <% end %>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <% @pet.meds.each do |med| %>
-            <td><%= link_to med.name, edit_med_path(med) %></td>
-            <td><%= med.dose %></td>
-            <td><%= med.instructions %></td>
-            <td><%= mail_to "refill@mydog.com", "refill@mydog.com", subject: "#{@pet.user.name} refill request", body: "Refill request for: #{@pet.user.name}, pet: #{@pet.name}, medication: #{med.name} dose: #{med.dose}  instructions: #{med.instructions} " %></td>
-
-
-            <td><%= link_to 'Show', med %></td>
-            <td><%= link_to 'Edit', edit_med_path(med) %></td>
-            <td><%= link_to 'Destroy',med, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-            <% if current_user.admin %>
-              <td align="center"><%= @pet.user.contact_method %></td>
-              <% if @pet.user.contact_method == "email" %>
-                <td><%= mail_to "#{@pet.user.email}", @pet.user.email, subject: "#{@pet.name}'s Rx is ready", body: "come pick up your Rx"  %></td>
-              <% else %>
-                <td><%= link_to @pet.user.phone_number, sms_path(pet_id: @pet.id, pet_name: @pet.name, phone_number: @pet.user.phone_number, med_name: med.name) %></td>
-              <% end %>
+            <td align="center"><%= @pet.user.contact_method %></td>
+            <% if @pet.user.contact_method == "email" %>
+              <td><%= mail_to "#{@pet.user.email}", @pet.user.email, subject: "#{@pet.name}'s Rx is ready", body: "come pick up your Rx"  %></td>
+            <% else %>
+              <td><%= link_to @pet.user.phone_number, sms_path(pet_id: @pet.id, pet_name: @pet.name, phone_number: @pet.user.phone_number, med_name: med.name) %></td>
             <% end %>
-        </tr>
-      <% end %>
-     </tbody>
-    </table>
-    <div class="navbar bottom">
-      <%= link_to 'add medication', new_med_path %>
-      <%= link_to 'edit', edit_pet_path(@pet) %>
-    </div>
+          <% end %>
+      </tr>
+    <% end %>
+   </tbody>
+  </table>
 
-</div>
+<h2><%= link_to 'add a medication', new_med_path(@pet) %></h2>
