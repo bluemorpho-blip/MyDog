@@ -31,6 +31,12 @@ body {
     overflow: hidden;
 }
 
+.bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
 /* Style the links inside the navigation bar */
 .navbar a {
     float: left;
@@ -64,10 +70,7 @@ body {
 .bg {
     /* The image used */
     background-image: url("adorable-blur-breed-close-up-406014.jpg");
-    /* Full height */
-    height: 100%;
-    /* min-height: 220px; */
-    min-height: 400px;
+    height: 360px;
     postion: relative;
 
     /* Center and scale the image nicely */
@@ -117,7 +120,8 @@ table.darkTable {
     height: 60px;
     text-align: center;
     border-collapse: collapse;
-    position: relative;
+    position: absolute;
+    bottom: 50px;
 }
 table.darkTable td, table.darkTable th {
     border: 1px solid #4A4A4A;
@@ -153,4 +157,12 @@ table.darkTable a:hover {
     color: #E6E6E6;
     font-weight: bold;
     background: none;
+}
+
+div.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    /* border: dashed 1px red; */
 }

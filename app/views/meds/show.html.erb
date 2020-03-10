@@ -1,29 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @med.name %>
-</p>
+<div class="container">
 
-<p>
-  <strong>Dose:</strong>
-  <%= @med.dose %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @med.name %>
+  </p>
 
-<p>
-  <strong>Instructions:</strong>
-  <%= @med.instructions %>
-</p>
+  <p>
+    <strong>Dose:</strong>
+    <%= @med.dose %>
+  </p>
 
-<p>
-  <strong>Pet:</strong>
-  <%= @pet.name %>
-</p>
-<br>
-<br>
-<br>
+  <p>
+    <strong>Instructions:</strong>
+    <%= @med.instructions %>
+  </p>
 
-<div class="navbar">
-  <%= link_to 'edit', edit_med_path(@med) %>
-  <%= link_to 'back', pet_path(@pet) %>
+  <p>
+    <strong>Pet:</strong>
+    <%= @pet.name %>
+  </p>
+
+  <div class="navbar bottom">
+    <%= link_to 'edit', edit_med_path(@med) %>
+    <%= link_to 'back', pet_path(@pet) %>
+  </div>
+
 </div>

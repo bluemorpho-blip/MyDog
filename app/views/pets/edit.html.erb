@@ -1,7 +1,11 @@
-<h1>edit pet</h1>
+<div class="container">
 
-<%= render 'form', pet: @pet %>
+  <h1>edit pet</h1>
 
-<div class="navbar">
-  <%= link_to 'show', @pet %>
+  <%= render 'form', pet: @pet %>
+
+  <div class="navbar bottom">
+    <%= link_to 'show', @pet %>
+  </div>
+
 </div>

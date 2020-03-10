@@ -1,15 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @veterinarian.name %>
-</p>
+<div class="container">
 
-<p>
-  <strong>Admin:</strong>
-  <%= @veterinarian.admin %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @veterinarian.name %>
+  </p>
 
-<div class="navbar">
-  <%= link_to 'edit', edit_veterinarian_path(@veterinarian) %>
+  <p>
+    <strong>Admin:</strong>
+    <%= @veterinarian.admin %>
+  </p>
+
+  <div class="navbar bottom">
+    <%= link_to 'edit', edit_veterinarian_path(@veterinarian) %>
+  </div>
+
 </div>

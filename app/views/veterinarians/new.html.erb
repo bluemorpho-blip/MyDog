@@ -1,10 +1,14 @@
-<h1>new veterinarian</h1>
+<div class="container">
 
-<% if current_user.try(:admin?) %>
+  <h1>new veterinarian</h1>
 
-  <%= render 'form', veterinarian: @veterinarian %>
+  <% if current_user.try(:admin?) %>
 
-<% else %>
-  <h1>You must be an admin to view this page</h1>
+    <%= render 'form', veterinarian: @veterinarian %>
 
-<% end %>
+  <% else %>
+    <h1>You must be an admin to view this page</h1>
+
+  <% end %>
+
+</div>

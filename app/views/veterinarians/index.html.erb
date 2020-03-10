@@ -1,31 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h1>veterinarians</h1>
+<div class="container">
 
-<table class="darkTable">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Admin</th>
-      <th colspan="3">Links</th>
-    </tr>
-  </thead>
+  <h1>veterinarians</h1>
 
-  <tbody>
-    <% @veterinarians.each do |veterinarian| %>
+  <table class="darkTable">
+    <thead>
       <tr>
-        <td><%= veterinarian.name %></td>
-        <td><%= veterinarian.admin %></td>
-        <td><%= link_to 'show', veterinarian %></td>
-        <td><%= link_to 'edit', edit_veterinarian_path(veterinarian) %></td>
-        <td><%= link_to 'destroy', veterinarian, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Admin</th>
+        <th colspan="3">Links</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @veterinarians.each do |veterinarian| %>
+        <tr>
+          <td><%= veterinarian.name %></td>
+          <td><%= veterinarian.admin %></td>
+          <td><%= link_to 'show', veterinarian %></td>
+          <td><%= link_to 'edit', edit_veterinarian_path(veterinarian) %></td>
+          <td><%= link_to 'destroy', veterinarian, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<div class="navbar">
-  <%= link_to 'new veterinarian', new_veterinarian_path %>
+  <br>
+
+  <div class="navbar bottom">
+    <%= link_to 'new veterinarian', new_veterinarian_path %>
+  </div>
+
 </div>
