@@ -15,7 +15,7 @@
   <tbody>
     <% @veterinarians.each do |veterinarian| %>
       <tr>
-        <td><%= veterinarian.name %></td>
+        <td><%= link_to veterinarian.name, veterinarian_pets_path(veterinarian.id) %></td>
         <td><%= veterinarian.admin %></td>
         <td><%= link_to 'show', veterinarian %></td>
         <td><%= link_to 'edit', edit_veterinarian_path(veterinarian) %></td>
