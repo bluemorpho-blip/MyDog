@@ -14,7 +14,7 @@ class MedsController < ApplicationController
   # GET /meds/new
   def new
     @med = Med.new
-    @user = @med.user
+    @user = current_user
   end
 
   # GET /meds/1/edit
@@ -23,8 +23,7 @@ class MedsController < ApplicationController
 
   # POST /meds
   def create
-    @user = @med.user
-    @med = @user.meds.new(med_params)
+    @med = current_user.meds.new(med_params)
     if @med.save
       redirect_to @med, notice: 'Med was successfully created.'
     else
