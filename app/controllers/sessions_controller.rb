@@ -8,11 +8,14 @@ class SessionsController < ApplicationController
     @user = User.find_by(params[:id])
   end
 
+  def new_vet
+    @vet = Veterinarian.find_by(params[:id])
+  end
+
   def create_login
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      user.save
       redirect_to root_path, notice: "successfully signed in as #{user.email}"
     else
       redirect_to signin_path, alert: 'incorrect email and/or password, try signing in with Google then updating your account'

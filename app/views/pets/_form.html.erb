@@ -16,8 +16,10 @@
   </div>
 
   <div class="field">
+    <p>
     <%= form.label :pet_name %>
     <%= form.text_field :name %>
+    </p>
   </div>
 
   <div class="field">
@@ -39,7 +41,14 @@
   </div>
 
   <div class="field">
-    <%= form.collection_select :veterinarian_id, Veterinarian.all, :id, :name, { prompt: 'Please select you veterinarian from this dropdown' } %>
+    <p>
+    <% if params[:veterinarian_id] %>
+      <%= form.label :veterinarian %>
+      <%= form.text_field :veterinarian_id, :value => @veterinarian.name %>
+      <% else %>
+      <%= form.collection_select :veterinarian_id, Veterinarian.all, :id, :name, { prompt: 'Please select you veterinarian from this dropdown' } %>
+    <% end %>
+    </p>
   </div>
 
   <div class="actions">

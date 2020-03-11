@@ -3,7 +3,11 @@ class PetsController < ApplicationController
 
   # GET /pets
   def index
-    @pets = Pet.all
+    if params[:veterinarian_id]
+      @pets = Veterinarian.find(params[:veterinarian_id]).pets
+    else
+      @pets = Pet.all
+    end
   end
 
   # GET /pets/1
@@ -15,9 +19,13 @@ class PetsController < ApplicationController
 
   # GET /pets/new
   def new
+    if params[:veterinarian_id]
+      @veterinarian = Veterinarian.find(params[:veterinarian_id])
+    else
+      @veterinarian = Veterinarian.all
+    end
     @pet = Pet.new
     @user = current_user
-    @veterinarians = Veterinarian.all
   end
 
   # GET /pets/1/edit

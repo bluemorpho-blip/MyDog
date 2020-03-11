@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :meds
   resources :pets
   resources :users
-  resources :veterinarians
+  resources :veterinarians do
+    resources :pets, only: [:index, :new]
+  end
   resources :sessions
 
   get 'sms' => 'twilio#sms'
@@ -17,8 +19,6 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   get 'signup' => 'users#new'
   post 'signup' => 'users#create'
-
-  get 'send_mail' => 'users#send_mail'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
