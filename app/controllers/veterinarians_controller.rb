@@ -53,7 +53,7 @@ class VeterinariansController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def veterinarian_params
-      params.require(:veterinarian).permit(:name, :admin, :email, :password_digest)
+      params.require(:veterinarian).permit(:name, :admin, :email, :password)
     end
 
 end
