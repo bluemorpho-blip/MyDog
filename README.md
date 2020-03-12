@@ -48,4 +48,5 @@ free Twilio account available for testing and development
 ruby, rails required.  Bundle install, rails s, localhost:3000 for local testing  
 DB is PostgreSQL for quick implementation on Heroku.  
 
-* ...I'll add more as I think of it...
+* NOTE: config/application.yml - this is where the google and twilio secrets, sid, token , id go!
+
